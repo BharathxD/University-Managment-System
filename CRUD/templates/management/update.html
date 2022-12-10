@@ -1,0 +1,17 @@
+{% extends '../base.html' %} {% block content %}
+
+<div class="homepage-container" style="grid-template-columns: 1fr; place-items: center;">
+    <div class="form-container">
+        <div>
+            <div class="update-container">
+                <h4>Update Student</h4>
+            </div>
+            <form action="" method="POST">
+                {% csrf_token %} {{form.as_p}}
+                <input type="submit" class="btn btn-dark w-100" value="Update Student" />
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

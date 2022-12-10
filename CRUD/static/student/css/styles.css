@@ -1,0 +1,228 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: #121435;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.main-container {
+    background-color: #FAF9F0;
+    width: 85%;
+    margin: 10px;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.page-header {
+    display: block;
+    background-color: #EDEBCA;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+
+.form-container {
+    background-color: #EDEBCA;
+    border-radius: 10px;
+    padding: 20px;
+    color: #000;
+    width: auto;
+}
+
+.form-container h4 {
+  font-weight: 700;
+  margin: 10px;
+}
+
+.form-container form {
+  width: auto;
+  min-width: 1300px;
+  display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.homepage-container {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+}
+
+.form-container input[type="submit"] {
+    margin-top: 10px;
+}
+
+
+.table-container {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #EDEBCA;
+    width: 100%;
+    grid-column: span 2;
+}
+
+table {
+    background-color: #f2f1dc;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  thead tr th {
+    padding: 10px;
+  }
+
+  tr td {
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+  }
+  
+  /* bottom-right border-radius */
+  table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+  }
+  
+  /* top-left border-radius */
+  table tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+  }
+  
+  /* top-right border-radius */
+  table tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+  }
+  
+
+.update-container h4 {
+    padding: 10px;
+    background-color: #f8f7e6;
+    border-radius: 10px;
+}
+
+body .side-navigation {
+  background-color: #FEFCF3;
+  width: 15%;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 10px;
+  margin-right: 0;
+  position: static;
+  
+}
+
+.side-navigation ul li {
+  flex-direction: column;
+  display: flex;
+}
+
+.side-navigation ul {
+  padding: 0;
+}
+
+.side-navigation ul li a {
+  text-decoration: none;
+  width: 100%;
+  color: #121435;
+}
+
+.side-navigation ul li {
+  list-style: none;
+}
+
+.side-navigation ul li a{
+  background-color: #F5EBE0;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.side-navigation ul li a:hover {
+  background-color: #DBA39A;
+  transition: 0.5s;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+.home-icons {
+  font-size:  2rem;
+}

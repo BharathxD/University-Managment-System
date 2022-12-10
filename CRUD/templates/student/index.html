@@ -1,0 +1,60 @@
+{% extends '../base.html' %} {% block content %}
+{% load static %}
+
+<div class="homepage-container">
+  <div class="form-container">
+    <h4 class="text-center add-student-header">Insert the Student Data</h4>
+    <form method="POST">
+      {% csrf_token %} 
+      {{form.as_p}}
+      <input type="submit" class="btn btn-lg btn-dark w-100" value="Insert Student" />
+    </form>
+  </div>
+    {% if student %}
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Password</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for data in student %}
+        <tr>
+          <th scope="row">{{data.id}}</th>
+          <td>{{data.name}}</td>
+          <td>{{data.email}}</td>
+          <td>{{data.password}}</td>
+          <td>
+            <a
+              href="{% url 'updatestudent' data.id %}"
+              class="btn btn-warning btn-sm"
+              ><i class="bi bi-pencil-square"></i
+            ></a>
+            <form
+              action="{% url 'deletestudent' data.id %}"
+              method="POST"
+              class="d-inline"
+            >
+              {% csrf_token %}
+              <input
+                type="submit"
+                class="btn btn-danger btn-sm"
+                value="Delete"
+              />
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    {% else %}
+    <h4 class="text-center alert alert-warning">No Records</h4>
+    {% endif %}
+  </div>
+</div>
+{% endblock content %}
